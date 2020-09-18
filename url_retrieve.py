@@ -1,6 +1,19 @@
 from urllib.request import urlretrieve
 
-URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
-LOCAL_FILE = 'local_copy.log'
+dates = []
+url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+local = 'local_copy.txt'
 
-local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
+url_ret = urlretrieve(url, local)
+
+open_log = open('local_copy.txt', 'r')
+
+for row in open_log: 
+    split = row.split(' ')
+    dates.append(split[3]) 
+
+print(dates)
+open_log.read(64) 
+open_log.readline() 
+
+print("Total request made in last year:", len(dates))
