@@ -17,13 +17,6 @@ for row in open_log:
 print(dates)
 open_log.read(64) 
 open_log.readline() 
-
-for date in dates:
-	pure_num.append(date[1:12])
-
-if pure_num[8:12] == '1995':
-    print(len(pure_num))
     
     
-
 print("Total request made in last year:", len(dates))
