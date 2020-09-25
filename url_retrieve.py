@@ -7,6 +7,7 @@ from os import path
 url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 local = 'local_copy.txt'
 dates = []
+Files = {}
 file_names = []
 error_codes = []
 n_dates = []
@@ -46,6 +47,7 @@ for d in n1_dates:
         n_month[d] += 1
     else:
         n_month[d] = 1
+        
 
 for mistakes in error_codes: 
     if(mistakes[0] == '3'):
@@ -56,7 +58,16 @@ for mistakes in error_codes:
 redirected_percent = (redirected_request / len(dates)) * 100
 redirected_percent = "{:.2f}".format(redirected_percent)
 not_successful_percent = (not_successful_request / len(dates)) * 100
-not_successful_percent = "{:.2f}".format(not_successful_percent)
+not_successful_percent = "{:.2f}".format(not_successful_percent
+                       
+for file in File_names:
+	if(file in Files):
+		Files[file] += 1
+	else:
+		Files[file] = 1
+					 
+most_requested = max(Files, key = Files.get)
+least_requested = min(Files, key = Files.get
 
 #print report
 print("********************************************************************")
@@ -83,9 +94,9 @@ print("{}%".format(redirected_percent))
 print()
 #5
 print("What was the most-requested file?")
-
+print(most_requested)
 print()
 #6
 print("What was the lease-requested file?")
-
+print(least_requested)
 print()
