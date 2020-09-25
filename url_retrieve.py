@@ -6,6 +6,8 @@ from os import path
 #variables
 url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 local = 'local_copy.txt'
+file_names = []
+error_codes = []
 dates = []
 n_dates = []
 n1_dates = []
