@@ -58,8 +58,10 @@ redirected_percent = "{:.2f}".format(redirected_percent)
 not_successful_percent = (not_successful_request / len(dates)) * 100
 not_successful_percent = "{:.2f}".format(not_successful_percent)
 
-
 #print report
+print("********************************************************************")
+print("REPORT FOR MARKETING DEPARTMENT")
+print("********************************************************************")
 #1
 print("1. How many requests were made on each day?")
 for a, b in sorted(n_month.items()):
