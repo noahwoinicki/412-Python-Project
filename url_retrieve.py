@@ -6,9 +6,9 @@ from os import path
 #variables
 url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 local = 'local_copy.txt'
+dates = []
 file_names = []
 error_codes = []
-dates = []
 n_dates = []
 n1_dates = []
 year_amount = []
@@ -40,20 +40,16 @@ for date in dates:
     n1_dates.append(date[1:3])
 
 for d in n1_dates:
-	if(day in n_month):
-		n_month[day] += 1
+	if(d in n_month):
+		n_month[d] += 1
 	else:
-		n_month[day] = 1
+		n_month[d] = 1
 
 print("Day: Number of Requests")
 for key, value in sorted(DaysOfMonth.items()):
 	print(f"{key} : {value}")
 	
-#####print()
-#####for row in open_log: 
-#####    split = row.split(' ')
-#####    dates.append(split[3]) 
-
+	
 #####print(dates)
 #####open_log.read(64) 
 #####open_log.readline() 
