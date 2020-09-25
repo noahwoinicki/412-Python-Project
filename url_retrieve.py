@@ -13,8 +13,8 @@ n_dates = []
 n1_dates = []
 year_amount = []
 n_month = {}
-not_successful_request = []
-redirected_request = []
+not_successful_request = 0
+redirected_request = 0
 
 
 #pull marketing info and make log 
@@ -47,8 +47,7 @@ for d in n1_dates:
 	else:
 	    n_month[d] = 1
 
-for mistakes in code: 
-    print(mistakes)
+for mistakes in error_codes: 
     if(mistakes[0] == '3'):
 	redirected_request = redirected_request + 1
     if(mistakes[0] == '4'):
