@@ -59,16 +59,32 @@ not_successful_percent = (not_successful_request / len(dates)) * 100
 not_successful_percent = "{:.2f}".format(not_successful_percent)
 
 
-
-
 #print report
-print("How many requests were made on each day?")
+#1
+print("1. How many requests were made on each day?")
 print("Day: Number of Requests")
 for key, value in sorted(n_month.items()):
-    print(f"{key} : {value}")
-    
-
+	print(f"{key} : {value}")
+print()
+#2a
+print("How many requests were made on a week-by-week basis?")
+print()
+#2b
+print("How many requests were made on a month-by-month basis?")
+print()
+#3
 print("What percentage of the requests were not successful?")
 print(not_successful_percent,'%')
+print()
+#4
 print("What percentage of the requests were redirected elsewhere?")
 print(redirected_percent,'%')
+print()
+#5
+print("What was the most-requested file?")
+
+print()
+#6
+print("What was the lease-requested file?")
+
+print()
