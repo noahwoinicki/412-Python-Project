@@ -13,9 +13,8 @@ n_dates = []
 n1_dates = []
 year_amount = []
 n_month = {}
-num_files = {}
-num_files1 = {}
-
+not_successful_request = []
+redirected_request = []
 
 
 #pull marketing info and make log 
@@ -30,17 +29,6 @@ else:
 #open and get to work
 open_log = open('local_copy.txt', 'r')
 
-
-for row in open_log:
-#	print(row)
-	s_row = row.split(' ')
-	if(len(s_row) > 8):
-		code.append(s_row[8]) #adds the error code to a list
-		Files_list.append(s_row[6]) #addes the file name to a list
-	if(len(s_row[3]) > 14): #cleans up dirty input data
-		dates.append(s_row[3]) #dates is a list of every date
-        
-        
 for row in open_log: 
     split = row.split(' ')
     if(len(split) > 8):
@@ -55,18 +43,31 @@ for date in dates:
 
 for d in n1_dates:
 	if(d in n_month):
-		n_month[d] += 1
+	    n_month[d] += 1
 	else:
-		n_month[d] = 1
+	    n_month[d] = 1
 
+for mistakes in code: 
+    print(mistakes)
+    if(mistakes[0] == '3'):
+	redirected_request = redirected_request + 1
+    if(mistakes[0] == '4'):
+	not_successful_request = not_successful_request + 1
+	
+redirected_percent = (redirected_request / len(dates)) * 100
+not_successful_percent = (not_successful_request / len(dates)) * 100
+
+
+
+
+#print report
+print("How many requests were made on each day?")
 print("Day: Number of Requests")
 for key, value in sorted(n_month.items()):
 	print(f"{key} : {value}")
 	
-	
-#####print(dates)
-#####open_log.read(64) 
-#####open_log.readline() 
-    
-    
-#####print("Total request made in last year:", len(dates))
+
+print("What percentage of the requests were not successful?")
+print(not_successful_percent,'%')
+print("What percentage of the requests were redirected elsewhere?")
+print(redirected_percent,'%')
