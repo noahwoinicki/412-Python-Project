@@ -12,7 +12,7 @@ error_codes = []
 n_dates = []
 n1_dates = []
 year_amount = []
-n_month = []
+n_month = {}
 
 
 #pull marketing info and make log 
