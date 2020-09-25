@@ -1,5 +1,6 @@
 #preparing python
 from urllib.request import urlretrieve
+import os.path
 from os import path
 
 
@@ -48,7 +49,6 @@ for d in n1_dates:
     else:
         n_month[d] = 1
         
-
 for mistakes in error_codes: 
     if(mistakes[0] == '3'):
         redirected_request = redirected_request + 1
@@ -58,16 +58,16 @@ for mistakes in error_codes:
 redirected_percent = (redirected_request / len(dates)) * 100
 redirected_percent = "{:.2f}".format(redirected_percent)
 not_successful_percent = (not_successful_request / len(dates)) * 100
-not_successful_percent = "{:.2f}".format(not_successful_percent
-                       
-for file in File_names:
-	if(file in Files):
-		Files[file] += 1
-	else:
-		Files[file] = 1
-					 
-most_requested = max(Files, key = Files.get)
-least_requested = min(Files, key = Files.get
+not_successful_percent = "{:.2f}".format(not_successful_percent)
+
+for file in file_names:
+    if(file in Files):
+        Files[file] += 1
+    else:
+        Files[file] = 1      
+        
+most_requested = max(Files, key=Files.get)
+least_requested = min(Files, key=Files.get)
 
 #print report
 print("********************************************************************")
