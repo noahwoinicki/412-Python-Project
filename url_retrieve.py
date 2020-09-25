@@ -42,17 +42,17 @@ for date in dates:
     n1_dates.append(date[1:3])
 
 for d in n1_dates:
-	if(d in n_month):
-	    n_month[d] += 1
-	else:
-	    n_month[d] = 1
+    if(d in n_month):
+        n_month[d] += 1
+    else:
+        n_month[d] = 1
 
 for mistakes in error_codes: 
     if(mistakes[0] == '3'):
-	redirected_request = redirected_request + 1
+        redirected_request = redirected_request + 1
     if(mistakes[0] == '4'):
-	not_successful_request = not_successful_request + 1
-	
+        not_successful_request = not_successful_request + 1
+    
 redirected_percent = (redirected_request / len(dates)) * 100
 not_successful_percent = (not_successful_request / len(dates)) * 100
 
@@ -63,8 +63,8 @@ not_successful_percent = (not_successful_request / len(dates)) * 100
 print("How many requests were made on each day?")
 print("Day: Number of Requests")
 for key, value in sorted(n_month.items()):
-	print(f"{key} : {value}")
-	
+    print(f"{key} : {value}")
+    
 
 print("What percentage of the requests were not successful?")
 print(not_successful_percent,'%')
