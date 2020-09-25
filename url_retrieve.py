@@ -54,7 +54,9 @@ for mistakes in error_codes:
         not_successful_request = not_successful_request + 1
     
 redirected_percent = (redirected_request / len(dates)) * 100
+redirected_percent = "{:.2f}".format(redirected_percent)
 not_successful_percent = (not_successful_request / len(dates)) * 100
+not_successful_percent = "{:.2f}".format(not_successful_percent)
 
 
 
