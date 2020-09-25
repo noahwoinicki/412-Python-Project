@@ -62,9 +62,8 @@ not_successful_percent = "{:.2f}".format(not_successful_percent)
 #print report
 #1
 print("1. How many requests were made on each day?")
-print("Day: Number of Requests")
-for key, value in sorted(n_month.items()):
-	print(f"{key} : {value}")
+for a, b in sorted(n_month.items()):
+	print("{} : {}".format(a,b))
 print()
 #2a
 print("How many requests were made on a week-by-week basis?")
